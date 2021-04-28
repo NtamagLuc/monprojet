@@ -4,6 +4,7 @@ import  './App.css'
 import 'antd/dist/antd.css';
 import {Pagination} from 'antd';
 import Main from './Component/Main'
+import Header from './Component/Header'
 
 class App extends React.Component {
 
@@ -38,9 +39,9 @@ class App extends React.Component {
     const indexOfFirstLog = indexOfLastLog - voituresPerPage;
         return(
             <div>
-                  <div>
-                    <Main/>
-                  </div>
+
+              <Header/>
+                 
                <div><h1>{this.state.title}</h1></div> 
                  <div className="log">{
                       voitures.slice(indexOfFirstLog,indexOfLastLog).map((voiture, index)=>{

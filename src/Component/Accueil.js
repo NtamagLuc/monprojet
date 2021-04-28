@@ -11,10 +11,6 @@ function Accueil(){
                 <button>Acceuil</button>
             </Link>
 
-            <Link to ="/Signup">
-                <button> connectez-vous</button>
-            </Link>
-
             <Link to ="/Login">
             <button> connectez-vous</button>
             </Link>

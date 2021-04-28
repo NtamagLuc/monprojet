@@ -11,41 +11,37 @@ import App  from "../App.js";
 function Main() {
     return (
         <div>    
-       <BrowserRouter>
+        <BrowserRouter>
 
-       <Accueil/>
+            <Switch>
 
-        <Switch>
-
-       <Route path="/AddCars">
+        <Route path="/AddCars">
 
            <AddCars/>
 
            </Route>
-
-        <Route path = "/App">
+           <Route path="/App">
 
             <App/>
 
-        </Route>
-        
-        <Route path = "/Signup">
-
-            <Signup/>
-
-        </Route>
-
-        <Route path = "/Login">
+            </Route>
+             <Route path = "/Login">
 
             <Login/>
 
-        </Route>
+            </Route>
+        
+            <Route path = "/Signup">
 
-        <Route path="/CarsDetails/:id" component={CarsDetails}/>
+                <Signup/>
 
-         </Switch>
+            </Route>
 
-        </BrowserRouter>
+            <Route path="/CarsDetails/:id" component={CarsDetails}/>
+
+            </Switch>
+
+            </BrowserRouter>
     
     
         </div>

@@ -24,16 +24,6 @@ class CarsDetails extends Component{
 
          
     }
-    // handleFavoritelog = () => {
-    //     const action = { type: "TOGGLE_FAVORITE", value: this.state.CarsDetails };
-    //      this.props.dispatch(action);
-    //      this.setState({
-    //        isFavorite: !this.state.isFavorite
-    //      });
-    //      console.log(this.props.favoritesLog)
-
-    //    }
-
     componentDidMount () {
 
         const { match : { params } } = this.props;
@@ -42,17 +32,8 @@ class CarsDetails extends Component{
  //preçise à l'ordinateur qu'on veut un lorgement preçis d'ou "id"
 
         axios.get("https://mamaison.arenaplaza.site/api/Room/GetRoomDetail/"+id).then(res => {
-           // const user=res.data
-            // localStorage.setItem('token',user.userTokeng)
             const carInfo = res.data;
-            // console.log(carInfo)
-            this.setState ({carDetail : carInfo});
-            // console.log(id)
-            // const favoriteLogIndex = this.props.favoritesLog.findIndex(item => item.id !== id)
-            // if(favoriteLogIndex !== -1){
-            //     this.setState({isFavorite: true})
-            // }
- 
+            this.setState ({carDetail : carInfo}); 
     })
 }
 

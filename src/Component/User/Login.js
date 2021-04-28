@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import axios from 'axios'
+import { Link } from "react-router-dom"
 
 
 
@@ -56,6 +57,9 @@ function Login(){
                     <input onClick={handleSubmit} type="submit" value="Envoyer"/>
                  </div>
             </form>
+            <Link to ="/Signup">
+                Si vous n'avez pas encore de compte <button>Inscrivez-vous</button>
+            </Link>
         </div>
 
     )
