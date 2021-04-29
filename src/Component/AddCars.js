@@ -61,14 +61,11 @@ class AddCars extends Component{
             this.setState({tabvoitures:newData})
         }
 
-        remove=(e)=>{
-            e.preventDefault();
-            const del={
-                value:this.state.tabvoitures
-            };
-            this.setState({tabvoitures:del})
-        }
-
+        remove = index => {
+            let imgdel = this.state.file
+            imgdel.splice(index, 1)
+            this.setState({ file: imgdel });
+          }
     render(){
 
         return(
@@ -126,8 +123,8 @@ class AddCars extends Component{
                         { 
                         this.state.file.map((urlimg, index) => {
                         return <div key={index}>
-                            <button type="button" onClick={this.remove} >del</button>
-                            <img src={URL.createObjectURL(urlimg)} alt="" width='100' height='100' />
+                           <button type="button" onClick={this.remove} >del</button>
+                             <img src={URL.createObjectURL(urlimg)} alt="" width='120' height='100' />
                         </div>
                         })}
                         </div>

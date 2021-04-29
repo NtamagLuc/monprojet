@@ -1,40 +1,27 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-
+import voitures from './Cars'
 
 class CarsDetails extends Component{
 
     constructor(props){
         super(props)
        this. state={
-            value :'',
-            tabvoitures: {
-                marque:"",
-                couleur:"",
-                places: "",
-                annee:"",
-                etat:"",
-                prix:"",
-                photo:""
-            },
-            carDetail : {
-
-            }
+            idV:0
         }
 
          
     }
     componentDidMount () {
 
-        const { match : { params } } = this.props;
-        let id = params.id;
+        // const { match : { params } } = this.props;
+        // let id = params.id;
+        const id=this.props.match.params.id - 1
+        console.log(voitures[id])
+        this.setState({idV : id})
+        console.log(this.state.idV)
 
  //preçise à l'ordinateur qu'on veut un lorgement preçis d'ou "id"
-
-        axios.get("https://mamaison.arenaplaza.site/api/Room/GetRoomDetail/"+id).then(res => {
-            const carInfo = res.data;
-            this.setState ({carDetail : carInfo}); 
-    })
 }
 
 
@@ -43,12 +30,13 @@ class CarsDetails extends Component{
 
             <div>
                 <label>
-                        <h2> marque: {this.state.CarsDetails.marque}</h2>
-                        <h2> couleur: {this.state.CarsDetails.couleur}</h2>
-                        <h2> places: {this.state.CarsDetails.places}</h2>
-                        <h2> annee: {this.state.CarsDetails.annee}</h2>
-                        <h2> etat: {this.state.CarsDetails.etat}</h2>
-                        <h2> prix: {this.state.CarsDetails.prix}</h2>
+                        {voitures[this.state.idV].photo}
+                        <h2> marque: {voitures[this.state.idV].marque}</h2>
+                        <h2> couleur: {voitures[this.state.idV].couleur}</h2>
+                        <h2> places: {voitures[this.state.idV].places}</h2>
+                        <h2> annee: {voitures[this.state.idV].annee}</h2>
+                        <h2> etat: {voitures[this.state.idV].etat}</h2>
+                        <h2> prix: {voitures[this.state.idV].prix}</h2>
                 </label>
                 <label>
                     <input type="submit" value="Envoyer"/>

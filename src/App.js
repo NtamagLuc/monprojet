@@ -5,14 +5,16 @@ import 'antd/dist/antd.css';
 import {Pagination} from 'antd';
 import Main from './Component/Main'
 import Header from './Component/Header'
-
+import { Link } from 'react-router-dom';
+import Mycars from './Component/Mycars'
+import 'bootstrap/dist/css/bootstrap.min.css'
 class App extends React.Component {
 
     state={
         title: 'Mon catalogue de voitures',
         currentPage: 1,
         voituresPerPage: 2,
-        voitures: []      
+        voitures: [] ,    
     }
 
     handleChange = value => {
@@ -26,10 +28,16 @@ class App extends React.Component {
           voituresPerPage: e.target.value,
           currentPage: 1
         });
-      };   
+      };
+
+      DeleteItem = (id)=>{
+      console.log(id);
+           const posts = this.state.voiture.filter(item => item.id !== id);  
+           console.log(posts) 
+           this.setState({ voiture:posts }); 
+      }         
  
    render(){
-
     const {
         currentPage,
         voituresPerPage
@@ -39,29 +47,22 @@ class App extends React.Component {
     const indexOfFirstLog = indexOfLastLog - voituresPerPage;
         return(
             <div>
-
               <Header/>
                  
                <div><h1>{this.state.title}</h1></div> 
                  <div className="log">{
-                      voitures.slice(indexOfFirstLog,indexOfLastLog).map((voiture, index)=>{
+                      voitures.slice(indexOfFirstLog,indexOfLastLog).map((Cars, index)=>{
                         return(
-                           <div className="label" key={index}>
-                                <div className="img">{voiture.photo}</div>
-                                <div><label> Marque: {voiture.marque}</label></div>
-                                <div><label>Couleur : {voiture.couleur} </label></div>
-                                <div><label>places : {voiture.places} </label></div>
-                                <div><label>annee : {voiture.annee}</label></div>
-                                <div><label>etat : {voiture.etat}</label></div>
-                                <div><label>prix : {voiture.prix}</label></div>
-                           </div>
-                        )
-                        
-                    
+                          <Mycars key={index} voiture={Cars}/>)
                       }
                       )
                   }
-
+{/* 
+          {voitures.map((data) => {
+          return(<Mycars voitures={data} deleteitem={this.DeleteItem }/>
+                          )
+                      } )} 
+ */}
 
                   </div>
                   <div className="pagination_div">
