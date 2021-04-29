@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import axios from "axios";
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 
@@ -39,30 +40,30 @@ function Signup(){
                 <div>
                     <label>
                     userLogin
-                            <input  onChange={handleChange} type= "text" name="userLogin"/>
+                            <input class="form-control"  onChange={handleChange} type= "text" name="userLogin"/>
                         </label>
                 </div>
                 <div>
                     <label>
                     userName
-                            <input  onChange={handleChange} type= "text" name="userName"/>
+                            <input class="form-control" onChange={handleChange} type= "text" name="userName"/>
                         </label>
                 </div>
 
                 <div>
                     <label>
                     userPassword
-                        <input  onChange={handleChange} type= "password" name="userPassWord"/>
+                        <input class="form-control" onChange={handleChange} type= "password" name="userPassWord"/>
                     </label>
                 </div>
                 <div>
-                    <label>
+                    <label controlId="formBasicEmail">
                     userEmail
-                        <input  onChange={handleChange} type= "text" name="userEmail"/>
+                        <input class="form-control" onChange={handleChange} type= "text" name="userEmail"/>
                     </label>
                 </div>
                 <div>
-                    <input onClick= {handleSubmit} type="submit" value="Envoyer"/>
+                    <input class="btn btn-primary" onClick= {handleSubmit} type="submit" value="Envoyer"/>
                 </div>
             </form>
         </div>

@@ -47,9 +47,7 @@ class App extends React.Component {
     const indexOfFirstLog = indexOfLastLog - voituresPerPage;
         return(
             <div>
-              <Header/>
-                 
-               <div><h1>{this.state.title}</h1></div> 
+               <div className="title"><h1>{this.state.title}</h1></div> 
                  <div className="log">{
                       voitures.slice(indexOfFirstLog,indexOfLastLog).map((Cars, index)=>{
                         return(

@@ -5,6 +5,7 @@ import CarsDetails from './CarsDetails'
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import Accueil from "./Accueil.js"
 import App  from "../App.js";
+import Header from './Header';
 
 
 
@@ -12,6 +13,7 @@ function Main() {
     return (
         <div>    
         <BrowserRouter>
+        <Route component = {Header} />
 
             <Switch>
 

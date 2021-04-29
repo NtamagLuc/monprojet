@@ -45,7 +45,7 @@ class Mycars extends React.Component{
         <div className="label">
                 
                 <Link to = {"/CarsDetails/"+voiture.id}><div className="img">{voiture.photo}</div></Link>
-                <div><label> marque:{voiture.marque}</label></div>
+                <div><label>marque:{voiture.marque}</label></div>
                 <div><label>couleur :{voiture.couleur} </label></div>
                 <div><label>places :{voiture.places} </label></div>
                 <div><label>annee :{voiture.annee}</label></div>

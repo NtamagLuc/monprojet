@@ -74,7 +74,7 @@ class AddCars extends Component{
                 <div>
                     <label>
                             marque
-                                    <select onChange = {this.handleChange} name ="marque" value = {this.state.tabvoitures["marque"]}>
+                                    <select class="form-control" onChange = {this.handleChange} name ="marque" value = {this.state.tabvoitures["marque"]}>
                                             <option>Bmw</option>
                                             <option>Audit</option>
                                             <option>Tesla</option>
@@ -91,7 +91,7 @@ class AddCars extends Component{
                     <div>
                     <label>
                             couleur
-                                    <select onChange = {this.handleChange} name = "couleur" value = {this.state.tabvoitures["couleur"]}>
+                                    <select class="form-control" onChange = {this.handleChange} name = "couleur" value = {this.state.tabvoitures["couleur"]}>
                                             <option>noir</option>
                                             <option>gris</option>
                                             <option>blanc</option>
@@ -105,19 +105,19 @@ class AddCars extends Component{
                     <div>
                     <label>
                             places
-                                    <select onChange = {this.handleChange} name = "places" value = {this.state.tabvoitures["places"]}>
+                                    <select class="form-control" onChange = {this.handleChange} name = "places" value = {this.state.tabvoitures["places"]}>
                                             <option>2</option>
                                             <option>4</option>
                                             <option>6</option>
                                     </select>
                         </label>
                         <div>
-                            <input onClick={this.handleSubmit} type="Submit" value="Envoyer"/>
+                            <input button class="btn btn-primary" onClick={this.handleSubmit} type="Submit" value="Envoyer"/>
                         </div>
                         <div>
                             <label>
                                     Choisissez une image
-                            <input type="file" className="img-vis" name="image" onChange={this.handleChange} />
+                            <input type="file" className=".form-control-file" name="image" onChange={this.handleChange} />
                                 </label>
                         
                         { 

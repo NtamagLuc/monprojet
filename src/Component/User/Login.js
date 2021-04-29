@@ -41,24 +41,24 @@ function Login(){
     return(
         <div>
             <form>
-                <div>
+                <div class="form-group">
                     <label>
                     userLogin
-                    <input onChange={handleChange} type= "text" name= "userLogin"/>
+                    <input class="form-control" onChange={handleChange} type= "text" name= "userLogin"/>
                     </label>
                 </div>
                 <div>
                     <label>
                     userPassWord
-                    <input onChange={handleChange} type= "password" name= "userPassWord"/>
+                    <input class="form-control" onChange={handleChange} type= "password" name= "userPassWord"/>
                     </label>
                 </div>
                 <div>
-                    <input onClick={handleSubmit} type="submit" value="Envoyer"/>
+                    <input class="btn btn-primary" onClick={handleSubmit} type="submit" value="Envoyer"/>
                  </div>
             </form>
             <Link to ="/Signup">
-                Si vous n'avez pas encore de compte <button>Inscrivez-vous</button>
+                Si vous n'avez pas encore de compte <button class="btn btn-primary">Inscrivez-vous</button>
             </Link>
         </div>
 
